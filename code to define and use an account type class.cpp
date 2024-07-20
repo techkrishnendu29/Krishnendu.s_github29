@@ -1,20 +1,7 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-#include<iostream>
+include<iostream>
 using namespace std;
 class account {
-			;int acc;
+			int acc;
 			char name[30];
 			float balance;
 			public:
