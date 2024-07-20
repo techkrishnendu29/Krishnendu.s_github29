@@ -1,15 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
 #include<iostream>
 class element{
     private:
