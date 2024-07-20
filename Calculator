@@ -1,0 +1,176 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+
+#define srt "Enter the operation you want to do "
+#define cls system("cls");
+#define pause system("pause");
+
+void basic_functions();
+void addition();
+void substraction();
+void multiplication();
+void division();
+void modulus();
+void exponent();
+void percentage();
+void factorial();
+
+int main()
+{
+    int x = 1;
+    char operation;
+    //basic_functions();
+    while (x)
+    {
+        cls
+        basic_functions();
+        printf("%s: ", srt);
+        operation = getche();
+        switch (operation)
+        {
+            case '+':addition(); pause
+                     break;
+            case '-':substraction(); pause
+                     break;
+            case '*':multiplication(); pause
+                     break;
+            case '/':division(); pause
+                     break;
+            case '$':modulus(); pause
+                     break;
+            case '!':factorial(); pause
+                     break;
+            case '^':exponent(); pause
+                     break;
+            case '@':percentage(); pause
+                     break;
+            case 'q': exit(0);
+                     break;
+            default:
+
+    printf("\n*your entered option is unavailable* ");
+
+        }
+    }
+}
+void basic_functions()
+{
+    //here i am going to put the chart and some basic function
+    printf("\n**welcome to calculator**\n");
+    printf("*press q to quit this program*\n");
+
+    printf("* display available option**\n\n");
+    printf("****\n\n");
+    printf("Enter + symbol for Addition \n");
+    printf("Enter - symbol for Subtraction \n");
+    printf("Enter * symbol for Multiplication \n");
+    printf("Enter / symbol for Division \n");
+    printf("Enter $ symbol for Modulus\n");
+    printf("Enter ^ symbol for Exponent \n");
+    printf("Enter @ for percentage\n");
+    printf("Enter ! symbol for Factorial \n");
+    printf("****\n\n");
+}
+void addition()
+{
+    float digits,total = 0;
+    int k = 0, n;
+    printf("\nEnter the number of  to add:");
+    scanf("%d", &n);
+    printf("Enter the %d numbers: \n", n);
+    while (k < n)
+    {
+        scanf("%f", &digits);
+        total = total + digits;
+        k = k + 1;
+    }
+    printf("Sum of the %d numbers = %f \n", n, total);
+}
+void substraction()
+{
+    float sub,a,b;
+    printf("\nEnter a number to substract: \n");
+    scanf("%f",&a);
+    printf("\nEnter another number: \n ");
+    scanf("%f",&b);
+    sub=a-b;
+    printf("Substraction of the numbers = %f \n",sub);
+
+}
+void multiplication()
+{
+    float  a, b,mul;
+    printf("\nPlease enter first numb   : ");
+    scanf("%f", &a);
+    printf("Please enter second number: ");
+    scanf("%f", &b);
+    mul=a*b;
+    printf("\nMultiplication of entered numbers = %f\n",mul);
+}
+void division()
+{
+    float a, b, d;
+    printf("\nPlease enter first number  : ");
+    scanf("%f", &a);
+    printf("Please enter second number : ");
+    scanf("%f", &b);
+    d=a/b;
+    printf("\nDivision of entered numbers=%f\n",d);
+}
+void modulus()
+{
+    int a, b, d=0;
+    printf("\nPlease enter first number   : ");
+    scanf("%d", &a);
+    printf("Please enter second number  : ");
+    scanf("%d", &b);
+    d=a%b;
+    printf("\nModulus of entered numbers = %d\n",d);
+}
+void exponent()
+{
+    double a,num, p;
+    printf("\nEnter two numbers to find the power \n");
+    printf("number: ");
+    scanf("%lf",&a);
+
+    printf("power : ");
+    scanf("%lf",&num);
+
+    p=pow(a,num);
+
+    printf("\n%lf to the power %lf = %lf \n",a,num,p);
+}
+void percentage()
+{
+    int a,b;
+    float per;
+    printf ("\nEnter a number : ");
+    scanf("%d",&a);
+    printf("\nEnter the percentage : ");
+    scanf("%d",&b);
+    per=a*b/100;
+    printf("The answer will be : %f",per);
+}
+void factorial()
+{
+    int i,fact=1,num;
+
+    printf("\nEnter a number to find factorial : ");
+    scanf("%d",&num);
+
+    if (num<0)
+    {
+        printf("\nPlease enter a positive number to");
+        printf(" find factorial and try again. \n");
+        printf("\nFactorial can't be found for negative");
+        printf(" values. It can be only positive or 0  \n");
+    }
+
+    for(i=1;i<=num;i++)
+    fact=fact*i;
+    printf("\n");
+    printf("Factorial of entered number %d is:%d\n",num,fact);
+}
